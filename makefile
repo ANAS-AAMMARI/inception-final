@@ -6,7 +6,7 @@
 #    By: aaammari <aaammari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/19 13:13:32 by aaammari          #+#    #+#              #
-#    Updated: 2023/09/19 13:13:34 by aaammari         ###   ########.fr        #
+#    Updated: 2023/09/23 16:32:48 by aaammari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,14 @@ V_WP = /home/aaammari/data/wordpress
 RM_VLS = $(shell docker volume ls -q)
 
 all: mkdir
-	@docker compose -f ./srcs/docker-compose.yml up -d --build
+	@docker compose -f ./srcs/docker-compose.yml up --build
 
 mkdir:
 	@mkdir -p $(V_DB)
 	@mkdir -p $(V_WP)
 
 up:
-	@docker compose -f ./srcs/docker-compose.yml up -d
+	@docker compose -f ./srcs/docker-compose.yml up
 
 down:
 	@docker compose -f ./srcs/docker-compose.yml down
