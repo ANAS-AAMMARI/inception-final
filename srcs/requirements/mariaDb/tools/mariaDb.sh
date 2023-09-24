@@ -10,7 +10,7 @@ chown -R mysql:mysql /run/mysqld
 
 if [ ! -d "/var/lib/mysql/$DB_NAME" ]; then
 
-    # Start MariaDB service for background
+    # Initialize MariaDB data directory
     mysql_install_db 2> /dev/null 
 
     # Create SQL statements file
